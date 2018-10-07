@@ -8,9 +8,9 @@ namespace ml_test
         {
             Console.WriteLine("Machine Learning Test");
 
-            var learner = new Learner();
-            learner.Learn();
-            learner.Estimate();
+            var model = Learner.Train().Result;
+            Learner.Evaluate(model);
+            Learner.Predict(model);
 
             Console.WriteLine("Completed.");
         }
